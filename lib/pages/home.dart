@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
   void initState() { 
     super.initState();
     categories=getcatagories();
+    getnews();
   }
   getnews() async {
     News newsClass=News();
@@ -68,10 +69,22 @@ class _HomeState extends State<Home> {
                   );
                 }
                 ),
-            )
+            ),
 
             ////blogs
-
+          Container(
+            child: ListView.builder(
+              itemCount: articles.length,
+              shrinkWrap: true,
+              itemBuilder:(context,index){
+                return Blogtile(
+                  imageurl: articles[index].urlToImage,
+                   title: articles[index].title, 
+                   desc: articles[index].description
+                   );
+              }
+              ),
+          )
 
           ],
           ) ,
