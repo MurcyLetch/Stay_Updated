@@ -12,8 +12,6 @@ class Articleview extends StatefulWidget {
 }
 
 class _ArticleviewState extends State<Articleview> {
-
-  
   @override
   Widget build(BuildContext context) {
     return Container(
