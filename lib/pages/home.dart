@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stay_updated/helper/data.dart';
 import 'package:stay_updated/helper/news.dart';
 import 'package:stay_updated/models/article_model.dart';
 import 'package:stay_updated/models/category_model.dart';
 import 'package:stay_updated/pages/article_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -41,7 +43,7 @@ class _HomeState extends State<Home> {
           children: [
             Text('Stay '),
             Text('Updated',style: TextStyle(
-              color:Colors.blue,
+              color:Colors.deepOrange
             ),
             )
           ],
@@ -53,6 +55,80 @@ class _HomeState extends State<Home> {
           child:CircularProgressIndicator(),
         ),
       ) : solve(),
+      drawer:Drawer(
+      child: Container(
+        color:Colors.grey,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            //header part begins
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+              child:UserAccountsDrawerHeader(
+                accountName: Text('Arijit Indu'),
+                accountEmail: Text('arijitindu99@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage("https://s3.amazonaws.com/codechef_shared/sites/default/files/uploads/pictures/334b188cd3f98dc56255855be2b138ae.jpeg"),
+                  ),
+              ), 
+           ),
+            //header part ends
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.home,
+                color:Colors.white,
+              ),
+              title: Text(
+                "Kolkata",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white, 
+                  ),
+              )
+              ),
+
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.chat_bubble_text_fill,
+                color:Colors.white,
+              ),
+              title: Text(
+                "9836760223",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white, 
+                  ),
+              )
+              ),
+
+              ListTile(
+              leading: Icon(
+              CupertinoIcons.mail,
+                color:Colors.white,
+              ),
+              title: Text(
+                "Mail me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white, 
+                  ),
+              )
+              ),
+
+              SizedBox(height: 60.0,),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 16,horizontal: 20),
+                child: Center(
+                  child: Text(
+                    "\"If you were born with the ability to change someone’s perspective or emotions, never waste that gift. It is one of the most powerful gifts God can give—the ability to influence\"",
+                    textScaleFactor: 1.4,
+                    style: GoogleFonts.poppins(
+                      color:Colors.white,
+                    ),))),
+          ],
+        ),
+      ),
+    ),
     );
   }
 
@@ -116,11 +192,11 @@ class Categorytile extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: CachedNetworkImage(
-                imageUrl:imageurl,width: 120,height:60,fit:BoxFit.cover)
+                imageUrl:imageurl,width: 150,height:80,fit:BoxFit.cover)
               ),
             Container(
               alignment: Alignment.center,
-              width:120,height: 60,
+              width:150,height: 80,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
                 color:Colors.black26,
