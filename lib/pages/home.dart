@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
             //header part ends
             ListTile(
               leading: Icon(
-                CupertinoIcons.home,
+                Icons.home,
                 color:Colors.white,
               ),
               title: Text(
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
 
             ListTile(
               leading: Icon(
-                CupertinoIcons.chat_bubble_text_fill,
+                Icons.chat,
                 color:Colors.white,
               ),
               title: Text(
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
 
               ListTile(
               leading: Icon(
-              CupertinoIcons.mail,
+              Icons.mail,
                 color:Colors.white,
               ),
               title: Text(
@@ -125,6 +125,7 @@ class _HomeState extends State<Home> {
                     style: GoogleFonts.poppins(
                       color:Colors.white,
                     ),))),
+
           ],
         ),
       ),
